@@ -1,0 +1,30 @@
+<div class="main-container">
+  <div class="card">
+    <div class="head">
+      <button class="close-icon" routerLink="/users">
+        <img src="/assets/icons/chevron-right.svg" alt="close-icon" />
+      </button>
+    </div>
+    <div class="body">
+      <ul>
+        <li>
+          <label for="id">شناسه: </label>
+          <span id="id">{{ user?.id }}</span>
+        </li>
+        <li>
+          <label for="email">ایمیل: </label>
+          <span id="email">{{ user?.email }}</span>
+        </li>
+        <li>
+          <label for="first_name">نام: </label>
+          <span id="first_name">{{ user?.first_name }}</span>
+        </li>
+        <li>
+          <label for="last_name">نام خانوادگی: </label>
+          <span id="last_name">{{ user?.last_name }}</span>
+        </li>
+      </ul>
+      <img [src]="user?.avatar" class="avatar" alt="avatar" />
+    </div>
+  </div>
+</div>

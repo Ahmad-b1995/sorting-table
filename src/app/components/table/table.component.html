@@ -1,0 +1,103 @@
+<div class="main-container">
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortById()" [class.isAscending]="order.id != null">
+            شناسه
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort"
+              [class.blue]="order.id === true"
+            />
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort reversed-arrow"
+              [class.blue]="order.id === false"
+            />
+          </th>
+          <th
+            (click)="sortAlphabetically('email')"
+            [class.isAscending]="order.email != null"
+          >
+            ایمیل
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort"
+              [class.blue]="order.email"
+            />
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort reversed-arrow"
+              [class.blue]="order.email === false"
+            />
+          </th>
+          <th
+            (click)="sortAlphabetically('first_name')"
+            [class.isAscending]="order.first_name != null"
+          >
+            نام
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort"
+              [class.blue]="order.first_name"
+            />
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort reversed-arrow"
+              [class.blue]="order.first_name === false"
+            />
+          </th>
+          <th
+            (click)="sortAlphabetically('last_name')"
+            [class.isAscending]="order.last_name != null"
+          >
+            نام خانوادگی
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort"
+              [class.blue]="order.last_name"
+            />
+            <img
+              src="/assets/icons/triangle.svg"
+              alt="sort-icon"
+              class="sort reversed-arrow"
+              [class.blue]="order.last_name === false"
+            />
+          </th>
+          <th>آواتار</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users">
+        <tr *ngFor="let user of tempUsers" [routerLink]="user.id.toString()">
+          <td>{{ user.id | faNum }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>
+            <img [src]="user.avatar" class="avatar" alt="location-pin-icon" />
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="is-pending" *ngIf="!users">
+        <tr *ngFor="let _ of [].constructor(pageSize)">
+          <td class="td-5" *ngFor="let _ of [].constructor(5)">
+            <div></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-pagination
+  [length]="users?.length"
+  [pageSize]="pageSize"
+  (page)="goToPage($event)"
+></app-pagination>

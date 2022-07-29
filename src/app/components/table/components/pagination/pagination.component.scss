@@ -1,0 +1,30 @@
+.main-container {
+  margin: 0 auto 2rem;
+}
+
+.pagination{
+  margin: auto;
+  list-style: none;
+  background-color: #f8fafc;
+  max-width: 300px;
+  min-width: 50px;
+  gap: 30px;
+  border-radius: 25px;
+  padding: .5rem 1rem;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a{
+  text-decoration: none;
+  color: #3c4955;
+}
+
+button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

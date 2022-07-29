@@ -1,0 +1,38 @@
+<div class="main-container">
+  <ul class="pagination">
+    <li class="page-item">
+      <button
+        (click)="prevPage()"
+        class="page-link"
+        [disabled]="activePage == 1"
+      >
+        قبلی
+      </button>
+    </li>
+    <li
+      class="page-item"
+      *ngFor="
+        let i of [].constructor(length && pageSize ? ((length! / pageSize!) | round) : 0);
+        let index = index
+      "
+    >
+      <button
+        class="page-link"
+        (click)="goToPage(index + 1)"
+        [disabled]="activePage === index + 1"
+      >
+        {{ index + 1 | faNum }}
+      </button>
+    </li>
+    <li class="page-item">
+      <button
+        class="page-link"
+        (click)="nextPage()"
+        href="#"
+        [disabled]="activePage === ((length! / pageSize!) | round)"
+      >
+        بعدی
+      </button>
+    </li>
+  </ul>
+</div>

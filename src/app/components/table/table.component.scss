@@ -1,0 +1,120 @@
+.main-container {
+  padding: 40px 20px;
+}
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  padding: 0;
+}
+
+table thead {
+  background-color: #a6bcd021;
+}
+
+td,
+th {
+  text-align: right;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  color: #3c4955;
+  white-space: nowrap;
+}
+
+td {
+  font-weight: 100;
+}
+
+th {
+  color: #4d5e6d;
+}
+
+th:not(:last-child) {
+  cursor: pointer;
+}
+
+tbody > tr {
+  cursor: pointer;
+}
+
+tbody > tr:hover {
+  cursor: pointer;
+  background-color: #a6bcd021;
+}
+
+img {
+  transition: 200ms;
+}
+
+input {
+  padding: 0.3rem;
+  outline: none;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 0.3rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 3rem;
+  aspect-ratio: 1/1;
+}
+
+.reversed-arrow {
+  transform: rotate(180deg);
+}
+
+.isAscending {
+  background-color: #a6bcd057;
+}
+
+.sort {
+  filter: opacity(50%) invert(35%) sepia(33%) saturate(285%) hue-rotate(166deg)
+    brightness(92%) contrast(93%);
+}
+
+.blue {
+  filter: invert(53%) sepia(14%) saturate(3401%) hue-rotate(176deg)
+    brightness(88%) contrast(90%);
+}
+
+.no-result div {
+  margin: 1rem auto;
+  padding-right: 1rem;
+  border-radius: 0.5rem;
+  color: #3c4955;
+  font-size: 0.9rem;
+}
+
+tbody.is-pending tr div {
+  padding: 0.6rem;
+  margin: 0.4rem 0;
+  animation: placeHolderShimmer 2.8s infinite linear;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background: #ececec;
+  }
+  30% {
+    background: #f7f7f7;
+  }
+  50% {
+    background: #ececec;
+  }
+  80% {
+    background: #f7f7f7;
+  }
+  100% {
+    background: #ececec;
+  }
+}

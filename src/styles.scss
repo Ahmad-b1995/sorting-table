@@ -1,0 +1,17 @@
+*{
+  font-family: Shabnam,tahoma,arial;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url("./assets/fonts/Shabnam.eot");
+  src: url("./assets/fonts/Shabnam.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Shabnam.woff2") format("woff2"),
+    url("./assets/fonts/Shabnam.woff") format("woff"),
+    url("./assets/fonts/Shabnam.ttf") format("truetype");
+  font-weight: normal;
+}
